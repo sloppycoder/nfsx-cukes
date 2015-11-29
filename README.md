@@ -6,6 +6,8 @@ This is the next generation automated UI testing tool based on
 * [Capybara](https://github.com/jnicklas/capybara) Autoamted UI testing tool for Ruby
 * [Selenium 2](http://www.seleniumhq.org) the standard toolkit for automated browser testing
 
+The simple tests case intended to test [NFS X iBank application](https://github.com/sloppycoder/nfsx/tree/master/ibank). It is incorporated into the continous integration workflow and launch for every commit pushed into specific branches. 
+
 To run the example:
 
 ```

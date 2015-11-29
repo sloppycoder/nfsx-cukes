@@ -23,7 +23,7 @@ end
 # login and logout
 #
 Given('I am ready to login') do
-  visit_home_page ENV['MAIN_APP_URL'] || 'http://localhost:8000/app'
+  visit_home_page "#{ENV['PUBLIC_BASE_URL']}/app" || 'http://localhost:8000/app'
 
   # HACK: around IE8 warning about self signed certificate
   if ie8?
