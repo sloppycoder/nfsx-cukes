@@ -1,0 +1,20 @@
+# config/cucumber.yml
+<% 
+# see config/browsers.yml for list of valid values.
+# i.e. firefox, chrome, phantomjs, ie
+browser = ENV["BROWSER"] || "firefox"
+
+FORMATTERS = {
+  :json => "--format json --out report.json" ,
+  :html => "--format PrettyFace::Formatter::Html --out report/index.html" 
+}
+
+opts = "BROWSER=#{browser} -r features -x"
+%>
+
+
+# default is for testing purpose, so we want to use real browser and compile html report
+default: <%= opts %>  
+t:       <%= opts %> --tag @smoke
+ci:      <%= opts %> <%= FORMATTERS[:json] %>
+pretty:  <%= opts %> <%= FORMATTERS[:html] %>

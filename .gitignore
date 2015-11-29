@@ -1,0 +1,11 @@
+.DS_Store
+.bundle
+html_report/
+report/
+.idea
+*.iml
+*report*.json
+tmp/
+jruby_env.bat
+tmp*.yml
+*.png

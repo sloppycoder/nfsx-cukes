@@ -1,0 +1,80 @@
+# does not leave off the : in key keys below
+# these are required in order to configure 
+# Capybara Selenium Driver
+# 
+# DO NOT USE ci, default or console as browser name as they are reserved in cucumber.yml file
+phantomjs:
+  :driver: :poltergeist
+  :options: 
+    # on CI server with 64bit RHEL 6.X, phantomjs needs over a minute to load login page. WHY?
+    :timeout: 120
+    :js_errors: false
+    :phantomjs_options:
+      - "--web-security=false"
+      - "--ignore-ssl-errors=true"
+
+firefox:
+  :driver: :selenium
+  :options: 
+    :browser: :firefox
+
+ie:
+  :driver: :selenium
+  :options: 
+    :browser: :ie
+
+chrome:
+  :driver: :selenium
+  :options: 
+    :browser: :chrome
+
+ghostdriver:
+  :driver: :selenium
+  :options: 
+    :browser: :remote
+    :url: http://localhost:4455
+  :capabilities:
+    :browser: phantomjs
+
+ie8_local_grid:
+  :driver: :selenium
+  :options: 
+    :browser: :remote
+    :url: http://127.0.0.1:4444/wd/hub
+  :capabilities:
+    :browser: internet_explorer
+    :browser_version: "8.0"
+
+ie8_grid_1:
+  :driver: :selenium
+  :options: 
+    :browser: :remote
+    :url: http://10.23.152.117:8080/wd/hub
+  :capabilities:
+    :browser: internet_explorer
+    :browser_version: "8.0"
+
+chrome_grid_1:
+  :driver: :selenium
+  :options: 
+    :browser: :remote
+    :url: http://10.23.152.117:8080/wd/hub
+  :capabilities:
+    :browser: chrome
+
+firefox_grid_1:
+  :driver: :selenium
+  :options: 
+    :browser: :remote
+    :url: http://10.23.152.117:8080/wd/hub
+  :capabilities:
+    :browser: firefox
+
+phantomjs_grid_1:
+  :driver: :selenium
+  :options: 
+    :browser: :remote
+    :url: http://10.23.152.117:8080/wd/hub
+  :capabilities:
+    :browser: phantomjs
+
