@@ -62,7 +62,6 @@ end
 # files.
 #
 def embed_screenshot(label)
-  binding.pry
   return unless self.respond_to?('embed')
 
   screenshot =  "#{SecureRandom.urlsafe_base64}.png"

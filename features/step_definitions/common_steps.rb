@@ -33,8 +33,6 @@ Given('I am ready to login') do
     wait_ie8
   end
 
-  binding.pry
-
   expect(page).to have_content('Username')
   expect(page).to have_content('Password')
 end
