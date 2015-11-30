@@ -7,9 +7,7 @@ Given I am ready to login
  Then I should see dashboard page
   And I should see "Hayashi San" on the screen
   And I should not see "no card information available" on the screen
- And wait a sec
  When I logout
- And wait a sec
  Then I should see login page
 
 Scenario: Login as Admin User
